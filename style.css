@@ -1,0 +1,184 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+
+body{
+    background-color: #fff;
+    font-family: 'Rubik', sans-serif;
+}
+
+/* BG */
+.background{
+    z-index: -100;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 300px;
+    background: url('./img/bg.jpg') no-repeat center;
+    image-rendering: optimizeQuality;
+}
+
+.background__liner-gradient{
+    z-index: -99;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 300px;
+    background: linear-gradient(to right, rgba(146, 54, 199, 0.5), rgba(94, 77, 243, 0.5))
+}
+
+/* Light */
+
+.light{
+    color: white;
+}
+
+/* APP */
+
+.container{
+    margin-top: 10vh;
+    display: flex;
+    justify-content: center;
+}
+
+.app{
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    min-height: 60vh;
+}
+
+/* HEADAER */
+
+.app__header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.app__header_h1{
+    letter-spacing: 15px;
+}
+
+.app__header_button{
+    background: none;
+    border: none;
+    outline: none;
+    transition: .2s;
+}
+
+.app__header_button:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.app__header_button img{
+    height: 43px;
+}
+
+/* FORM */
+
+.app__form{
+    margin: 20px 0;
+    width: 100%;
+}
+
+.app__form_input-text, .app__form_input-button{
+    width: 80%;
+    background-color: #fff;
+    outline: none;
+    border: none;
+    padding: 20px 10px;
+    border-radius: 5px;
+    
+}
+
+.app__form_input-button{
+    width: 19%;
+    transition: .2s all ease-in-out;
+    cursor: pointer;
+}
+
+.app__form_input-button:hover{
+    background-color: rgb(112, 112, 112);
+    opacity: .8;
+    color: white;
+}
+
+/* TASKS */
+
+.app__tasks{
+    color: black;
+    padding: 10px;
+    width: 100%;
+    min-height: 100px;
+    box-shadow: 0px 17px 14px -14px rgba(40,48,199,0.37);
+    background-color: #fff;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.app__tasks_task{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 1px solid gray;
+    padding: 5px 0;
+}
+
+.app__tasks_task-delete{
+    background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: .2s all;
+}
+
+.app__tasks_task-delete:hover{
+    opacity: .7;
+}
+
+.app__tasks_task-delete img{
+    height: 40px;
+}
+
+.app__tasks_task-modify_task-done{
+    outline: none;
+}
+
+.app__tasks_task-modify{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.app__tasks_task-modify_task-done{
+    margin-right: 10px;
+}
+
+.app__tasks_info{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.app__tasks_info button{
+    background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: .2s all;
+    font-size: 15px;
+}
+
+.app__tasks_info button:hover{
+    color: #BD98E7;
+}
