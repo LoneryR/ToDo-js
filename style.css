@@ -162,6 +162,10 @@ body{
     margin-right: 10px;
 }
 
+.app__tasks_info_select-active{
+    margin: 0 10px;
+}
+
 .app__tasks_info{
     margin-top: 20px;
     width: 100%;
