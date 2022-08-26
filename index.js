@@ -18,6 +18,7 @@ formCreateButton.addEventListener('click', (e) => {
 
     const taskDone = document.createElement('input')
     taskDone.type = 'checkbox'
+
     taskDone.className = 'app__tasks_task-modify_task-done'
     const taskNode = document.createElement('div')
     taskNode.className = 'app__tasks_task-modify_task-text'
@@ -25,13 +26,18 @@ formCreateButton.addEventListener('click', (e) => {
     
     const taskDeleteButton = document.createElement('button')
     taskDeleteButton.className = 'app__tasks_task-delete'
+
+    const img = document.createElement('img')
+    img.src = './img/delete.png'
+
     taskDeleteButton.addEventListener('click', () => {
         taskList = taskList.filter(task => id !== task.id)
         return render()
     })
 
-    const img = document.createElement('img')
-    img.src = './img/delete.png'
+    taskDone.addEventListener('click', () => {
+        taskNode.classList.toggle('strike')
+    })
 
     taskModify.append(taskDone, taskNode)
     taskDeleteButton.append(img)

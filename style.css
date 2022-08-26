@@ -10,6 +10,12 @@ body{
     font-family: 'Rubik', sans-serif;
 }
 
+.strike{
+    text-decoration: line-through;
+    opacity: 0.8;
+    margin-top: 5px;
+}
+
 /* BG */
 .background{
     z-index: -100;
