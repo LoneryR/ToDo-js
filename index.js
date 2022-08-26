@@ -1,10 +1,14 @@
 const formInput = document.querySelector('.app__form_input-text')
 const formCreateButton = document.querySelector('.app__form_input-button')
-const tasks = document.querySelector('.app__tasks')
+const tasks = document.querySelector('.app__tasks_task-inner')
+
+let taskList = []
 
 formCreateButton.addEventListener('click', (e) => {
     e.preventDefault()
+    if (formInput.value === '') return
     const value = formInput.value
+    let id = Date.now()
     
     const task = document.createElement('div')
     task.className = 'app__tasks_task'
@@ -19,19 +23,32 @@ formCreateButton.addEventListener('click', (e) => {
     taskNode.className = 'app__tasks_task-modify_task-text'
     taskNode.innerHTML = value
     
+    const taskDeleteButton = document.createElement('button')
+    taskDeleteButton.className = 'app__tasks_task-delete'
+    taskDeleteButton.addEventListener('click', () => {
+        taskList = taskList.filter(task => id !== task.id)
+        return render()
+    })
 
-    const taskButton = document.createElement('button')
-    taskButton.className = 'app__tasks_task-delete'
     const img = document.createElement('img')
     img.src = './img/delete.png'
-    
 
     taskModify.append(taskDone, taskNode)
-    taskButton.append(img)
+    taskDeleteButton.append(img)
 
-    task.append(taskModify, taskButton)
-
-    tasks.prepend(task)
+    task.append(taskModify, taskDeleteButton)
+    taskList = [...taskList, {id: id, task: task}]
+    console.log(taskList)
+    render()
 
     formInput.value = ''
 })
+
+const render = () => {
+    tasks.innerHTML = ''
+    taskList.map(item => {
+        return tasks.prepend(item.task)
+    })
+}
+
+render()
