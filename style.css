@@ -97,7 +97,7 @@ body{
     background-color: #fff;
     outline: none;
     border: none;
-    padding: 20px 10px;
+    padding: 10px 10px;
     border-radius: 5px;
     
 }
@@ -109,8 +109,8 @@ body{
 }
 
 .app__form_input-button:hover{
-    background-color: rgb(112, 112, 112);
-    opacity: .8;
+    background-color: #BD98E7;
+    opacity: .9;
     color: white;
 }
 
