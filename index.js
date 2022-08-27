@@ -6,18 +6,27 @@ const active = document.querySelector('.app__tasks_info_select-active')
 const completed = document.querySelector('.app__tasks_info_select-completed')
 const all = document.querySelector('.app__tasks_info_select-all')
 const clear = document.querySelector('.app__tasks_info_clear-completed_button')
+const theme = document.querySelector('.app__header_button-theme')
+const app = document.querySelector('.app')
 
 let allPage = false
 let activePage = false
 let completedPage = false
 
-
 let taskList = []
 
 formCreateButton.addEventListener('click', (e) => {
     e.preventDefault()
-    //close
+    //return
     if (formInput.value === '') return
+
+    //set active main page
+    allPage = true
+    activePage = false
+    completedPage = false
+    all.style.color = '#BD98E7'
+    active.style.color = ''
+    completed.style.color = ''
 
     //variebls
     const value = formInput.value
@@ -72,8 +81,6 @@ formCreateButton.addEventListener('click', (e) => {
                 else if(completedPage){
                     renderCompleted()
                 }
-            } else {
-                null
             }
         })
     })
@@ -95,6 +102,7 @@ formCreateButton.addEventListener('click', (e) => {
     formInput.value = ''
 })
 
+//render all tasks
 const renderAll = () => {
     activePage = false
     completedPage = false
@@ -108,6 +116,7 @@ const renderAll = () => {
     !taskList.length ? tasks.innerHTML = 'nothing' : null
 }
 
+//render active tasks
 const renderActive = () => {
     allPage = false
     completedPage = false
@@ -125,6 +134,7 @@ const renderActive = () => {
     count === 0 ? tasks.innerHTML = 'nothing' : null
 }
 
+//render completed tasks
 const renderCompleted = () => {
     allPage = false
     activePage = false
@@ -142,8 +152,12 @@ const renderCompleted = () => {
     count === 0 ? tasks.innerHTML = 'nothing' : null
 }
 
+//clear completed tasks
 const clearCompleted = () => {
     allPage = true
+    activePage = false
+    completedPage = false
+    renderAll()
     const check = document.querySelectorAll('.app__tasks_task-modify_task-done')
     const node = document.querySelectorAll('.app__tasks_task-modify_task-text')
     for(let i = 0; i < check.length; i++){
@@ -153,27 +167,43 @@ const clearCompleted = () => {
     taskList.map((item) => {
         item.completed = false
     })
+    all.style.color = '#BD98E7'
+    active.style.color = ''
+    completed.style.color = ''
     return renderAll()
 }
 
+//set style in all page
 all.addEventListener('click', () => {
     all.style.color = '#BD98E7'
     active.style.color = ''
     completed.style.color = ''
     renderAll()
 })
+
+//set style in active page
 active.addEventListener('click', () => {
     all.style.color = ''
     active.style.color = '#BD98E7'
     completed.style.color = ''
     renderActive()
 })
+
+//set style in conpleted page
 completed.addEventListener('click', () => {
     all.style.color = ''
     active.style.color = ''
     completed.style.color = '#BD98E7'
     renderCompleted()
 })
+
+//clear completed
 clear.addEventListener('click', clearCompleted)
 
+//toggle theme
+theme.addEventListener('click', () => {
+    document.body.classList.toggle('dark')
+})
+
+//render all page on start app
 renderAll()

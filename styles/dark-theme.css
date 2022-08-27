@@ -1,0 +1,45 @@
+/* DARK */
+body.dark{
+    background-color: #202124;
+    /* color: #282828; */
+}
+
+/* BG */
+body.dark .background__liner-gradient{
+    background: linear-gradient(to right, rgba(78, 29, 107, 0.6), rgba(54, 45, 138, 0.6))
+}
+
+/* HEADER */
+body.dark .app__header_button-theme img{
+    filter: invert(1);
+}
+
+/* FORM */
+body.dark .app__form_input-text, body.dark .app__form_input-button{
+    color: white;
+    background-color: #383838;
+}
+
+body.dark .app__form_input-button:hover{
+    background-color: #BD98E7;
+}
+
+/* TASKS */
+body.dark .app__tasks{
+    color: white;
+    box-shadow: 0px 17px 14px -14px rgba(47, 56, 230, 0.37);
+    background-color: #383838;
+}
+
+body.dark .app__tasks_task-delete{
+    filter: invert(1);
+}
+
+/* INFO */
+body.dark .app__tasks_info button{
+    color: white;
+}
+
+body.dark .app__tasks_info button:hover{
+    color: #BD98E7;
+}

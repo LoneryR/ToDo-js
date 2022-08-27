@@ -23,7 +23,7 @@ body{
     top: 0;
     width: 100vw;
     height: 300px;
-    background: url('./img/bg.jpg') no-repeat center;
+    background: url('../img/bg.jpg') no-repeat center;
     image-rendering: optimizeQuality;
 }
 
@@ -34,12 +34,6 @@ body{
     width: 100vw;
     height: 300px;
     background: linear-gradient(to right, rgba(146, 54, 199, 0.5), rgba(94, 77, 243, 0.5))
-}
-
-/* Light */
-
-.light{
-    color: white;
 }
 
 /* APP */
@@ -67,21 +61,22 @@ body{
 
 .app__header_h1{
     letter-spacing: 15px;
+    color: white;
 }
 
-.app__header_button{
+.app__header_button-theme{
     background: none;
     border: none;
     outline: none;
     transition: .2s;
 }
 
-.app__header_button:hover{
+.app__header_button-theme:hover{
     opacity: 0.5;
     cursor: pointer;
 }
 
-.app__header_button img{
+.app__header_button-theme img{
     height: 43px;
 }
 
@@ -147,11 +142,11 @@ body{
 }
 
 .app__tasks_task-delete:hover{
-    opacity: .7;
+    opacity: .4;
 }
 
 .app__tasks_task-delete img{
-    height: 40px;
+    height: 30px;
 }
 
 .app__tasks_task-modify_task-done{
